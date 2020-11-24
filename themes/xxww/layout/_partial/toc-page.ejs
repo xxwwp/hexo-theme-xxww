@@ -1,0 +1,22 @@
+<!-- <%# 目录解析函数，通过配置文件 nav.json 解析目录 %> -->
+<% function renderNav(nav,pref = '') { var link = url_for( pref + nav.path +'/'); if(Array.isArray(nav.children)){ %>
+<li>
+  <span class="label"><%- nav.path %></span>
+</li>
+<ul>
+  <% nav.children.forEach((val) => { renderNav(val,pref + nav.path + '/'); }) %>
+</ul>
+<% }else { %>
+<li>
+  <a href="<%- link %>" class="<%- link === url_for( page.path) ? 'current' : '' %>"><%- nav.path %></a>
+</li>
+<% } } %>
+
+<div class="toc-page">
+  <div class="toc-page-hd">
+    <a href="/"> <%- config.title %> </a>
+  </div>
+  <ul>
+    <% site.data.nav.forEach(val => renderNav(val) ) %>
+  </ul>
+</div>

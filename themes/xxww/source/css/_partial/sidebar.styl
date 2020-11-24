@@ -1,0 +1,43 @@
+@import './toc-page.styl'
+@import './toc-article.styl'
+
+.sidebar
+    .sidebar-toc-page
+        position: fixed
+        top:0
+        bottom: 0
+        left: 0
+        transform: translateX(0)
+        transition: transform .3s
+        background-color white
+        z-index: 10
+        box-shadow: 0 0 3px 0 #eee
+        overflow hidden
+        &:hover
+            overflow auto
+    .sidebar-toc-article
+        position: fixed
+        top:0
+        bottom: 0
+        left: 80%
+        left: calc(  max(100vw,1200px)  - ( max(100vw,1200px) - 760px ) / 2)
+        overflow hidden
+        &:hover
+            overflow auto
+    @media screen and (max-width: 1200px)
+        .sidebar-toc-page
+            transform: translateX(-90%)
+            &.show
+                transform: translateX(0)
+        .sidebar-toc-article
+            display: none
+
+
+
+
+
+
+
+
+
+

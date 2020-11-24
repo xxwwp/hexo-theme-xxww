@@ -1,0 +1,12 @@
+[
+  { "path": "test" },
+  {
+    "path": "router-test",
+    "children":
+      [
+        { "path": "deep", "children": [{ "path": "deep-router" }] },
+        { "path": "more" },
+        { "path": "index" },
+      ],
+  },
+]

@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <aside class="sidebar-toc-page"><%- partial('toc-page') %></aside>
+  <aside class="sidebar-toc-article"><%- partial('toc-article') %></aside>
+</div>
+<script>
+  $(document).ready(function () {
+    var elTocPage = $('.sidebar .sidebar-toc-page').get(0);
+    $(elTocPage).on('click', function (elToc) {
+      $(this).addClass('show')
+    })
+    $(document).on('click', function (el) {
+      elTocPage.contains(el.target) || $(elTocPage).removeClass('show');
+    })
+  })
+</script>

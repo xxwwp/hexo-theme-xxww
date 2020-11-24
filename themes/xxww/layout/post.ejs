@@ -1,0 +1,32 @@
+<article>
+  <h1><%- page.title %></h1>
+  <hr />
+  <div class="article-bd"><%- page.content %></div>
+  <div class="article-ft">
+    <p>
+      <span class="last-update">最后更新时间：<%- date(page.updated,'YYYY/MM/DD') %></span>
+    </p>
+  </div>
+</article>
+
+<script>
+  function getPageOffset() {
+    if (window.pageYOffset !== undefined) {
+      return {
+        x: window.pageXOffset,
+        y: window.pageYOffset,
+      };
+    } else {
+      // IE7 以下时，document.compatMode 的值是 "BackCompat"
+      return document.compatMode === "BackCompat"
+        ? {
+            x: document.body.scrollTop,
+            y: document.body.scrollLeft,
+          }
+        : {
+            x: document.documentElement.scrollTop,
+            y: document.documentElement.scrollLeft,
+          };
+    }
+  }
+</script>
