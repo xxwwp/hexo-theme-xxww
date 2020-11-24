@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "parseNav": "node ./source/_data/navCreator.js"
   },
   "hexo": {
     "version": "5.2.0"
